@@ -1,0 +1,132 @@
+/* styles.css */
+
+/* General Styles */
+body {
+  font-family: 'Consolas', sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 0, 0);
+  height: 100%;
+  margin:-24px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+.navbar {
+    background-color: rgb(64, 0, 0) !important; /* Ensures a completely black background */
+}
+
+/* Header */
+.jumbotron {
+  background-color: #6c757d; /* Dark grey for a sophisticated look */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.jumbotron .display-3 {
+  font-weight: 700;
+}
+
+.jumbotron .lead {
+  font-size: 1.25rem;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #8c2c2c; /* Deep wine color */
+}
+
+.navbar a {
+  color: rgb(0, 0, 0) !important;
+}
+
+
+/* Product Card Styles */
+.card {
+  border: 20px solid rgb(0, 0, 0);
+  transition: all 0.s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.card-text {
+
+  font-weight: 500;
+  color: #8c2c2c;
+}
+
+/* Product Button */
+.btn-success {
+  background-color: rgb(0, 255, 64); /* Orange color for buttons */
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #e67e22; /* Lighter shade on hover */
+}
+
+
+/* Footer */
+.footer {
+  background-color: #8c2c2c;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+}
+
+/* Container and Rows */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .jumbotron .display-3 {
+    font-size: 2rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+      display: none;
+  }
+  .carousel-item {
+      height: 100%; /* Ensure the carousel item fills the container height */
+    }
+
+    .carousel-item video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; /* Ensure the video covers the entire container without distorting */
+    }
+}

@@ -1,0 +1,136 @@
+/* styles.css */
+
+/* General Styles */
+body {
+	font-family: 'Arial', sans-serif;
+	 background-color: rgb(0, 0, 0);
+	 color: rgb(255, 0, 0);
+	 height: 100%;
+	 margin:0;
+	 display:flex;
+	 flex-direction: column;
+	 padding-top: 150px;
+}
+.navbar {
+    background-color: rgb(64, 0, 0)!important; /* Ensures a completely black background */
+}
+
+/* Header */
+.jumbotron {
+  background-color: #6c757d; /* Dark grey for a sophisticated look */
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.jumbotron .display-3 {
+  font-weight: 700;
+}
+
+.jumbotron .lead {
+  font-size: 1.25rem;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #8c2c2c; /* Deep wine color */
+}
+
+.navbar a {
+  color: #fff !important;
+}
+
+/* Product Card Styles */
+.card {
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-footer {
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.card-text {
+  font-weight: 500;
+  color: #8c2c2c;
+}
+
+/* Product Button */
+.btn-success {
+  background-color: #d35400; /* Orange color for buttons */
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+  background-color: rgb(0, 255, 0); /* Lighter shade on hover */
+}
+.dropdown-menu .dropdown-item {
+    color: red; /* Change this to your desired color */
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: blue; /* Optional: Change color when hovered */
+}
+
+/* Footer */
+.footer {
+	background-color: #8c2c2c;
+	color: #fff;
+	padding: 20px 0;
+	text-align: center;
+	position: fixed;
+	bottom: 100;
+	left:0;
+	width: 100%;
+}
+
+/* Container and Rows */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .jumbotron .display-3 {
+    font-size: 2rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+      display: none;
+  }
+  .carousel-item {
+      height: 100%; /* Ensure the carousel item fills the container height */
+    }
+
+    .carousel-item video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; /* Ensure the video covers the entire container without distorting */
+    }
+}

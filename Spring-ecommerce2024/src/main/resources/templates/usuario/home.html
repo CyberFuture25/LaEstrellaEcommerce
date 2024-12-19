@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>La Estrella</title>
+
+
+  <!-- Bootstrap core CSS -->
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/styles.css}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <div th:include="usuario/template_usuario.html::header" th:if="${sesion==null}"></div>
+  <div th:include="usuario/template_usuario.html::header-user" th:unless="${sesion==null}"></div>
+  
+  <!-- Video Carousel -->
+  <!-- Video Carousel Header -->
+          <div id="videoCarousel" class="carousel slide my-4" data-ride="carousel">
+              <ol class="carousel-indicators">
+                  <li data-target="#videoCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#videoCarousel" data-slide-to="1"></li>
+                  <li data-target="#videoCarousel" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                      <video class="d-block w-100 h-100" muted>
+                          <source src="videos/video01.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+                  <div class="carousel-item">
+                      <video class="d-block w-100 h-100" muted>
+                          <source src="videos/video02.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+                  <div class="carousel-item">
+                      <video class="d-block w-100 h-100" muted>
+                          <source src="videos/video03.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+              </div>
+          
+          </div>
+   <!--ENDCODE-->
+   <script>
+       document.addEventListener('DOMContentLoaded', function() {
+           const videos = document.querySelectorAll('#videoCarousel video');
+           const carousel = $('#videoCarousel');
+
+           videos.forEach((video, index) => {
+               video.addEventListener('ended', function() {
+                   carousel.carousel('next');
+               });
+           });
+
+           // Autoplay the current video when the slide becomes active
+           carousel.on('slide.bs.carousel', function(e) {
+               const currentIndex = $(e.relatedTarget).index();
+               videos.forEach(video => video.pause()); // Pause all videos
+               videos[currentIndex].play(); // Play the current video
+           });
+
+           // Start the first video automatically
+           videos[0].play();
+       });
+   </script>
+
+    <!-- Page Content -->
+    <div class="container">
+
+
+      <!-- Page Features -->
+      <div class="row text-center">
+
+		<div class="col-lg-3 col-md-6 mb-4" th:each="producto: ${productos}">
+		  <div class="card h-100">
+		    <img class="card-img-top fixed-height-img" th:src="@{/images/{img} (img=${producto.imagen})}" alt="" style="height: 700px; object-fit: cover;">
+		    <div class="card-body">
+		      <p class="card-text " th:text="${producto.nombre}"></p>
+		    </div>
+		    <div class="card-footer">
+		      <a th:href="@{/productohome/{id} (id=${producto.id}) }" class="btn btn-success">Ver producto</a>
+		    </div>
+		  </div>
+		</div>
+
+        
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+   <div th:include="usuario/template_usuario.html::footer">
+	
+   </div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  </body>
+
+  </html>
